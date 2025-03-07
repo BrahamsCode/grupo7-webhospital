@@ -14,6 +14,12 @@ Sistema web desarrollado para la administración completa de las operaciones de 
 - MySQL/PostgreSQL
 - Servidor web (Apache/Nginx)
 
+## Contribuyentes
+- Antony Brahams Paredes Paulino
+- Homero Percy Quispe Coaquira
+- José Randy Rodrigo Choque
+- Hilder Ivan Riofrio cortez
+
 ## Instalación
 
 ### 1. Clonar el repositorio
