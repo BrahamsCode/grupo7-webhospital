@@ -1,4 +1,4 @@
-Sistema web desarrollado para la administración completa de las operaciones de un hospital desde el panel de administrador. Esta aplicación permite gestionar pacientes, citas médicas, personal médico e historias clínicas y también desde el portal para el cliente haga su reserva de manera integra y eficiente, 
+# Sistema web desarrollado para la administración completa de las operaciones de un hospital desde el panel de administrador. Esta aplicación permite gestionar pacientes, citas médicas, personal médico e historias clínicas y también desde el portal para el cliente haga su reserva de manera integra y eficiente, 
 
 
 ## Tecnologías Utilizadas
