@@ -12,8 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('horarios_doctores', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_horario');
+            $table->unsignedBigInteger('id_doctor');
+            $table->char('dia_semana', 1);
+            $table->time('hora_inicio');
+            $table->time('hora_fin');
+            $table->char('estado_auditoria', 1)->default('A');
+            $table->timestamp('fecha_creacion_auditoria')->useCurrent();
             $table->timestamps();
+            
+            $table->foreign('id_doctor')->references('id_doctor')->on('doctores')->onDelete('cascade');
         });
     }
 
