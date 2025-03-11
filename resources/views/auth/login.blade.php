@@ -16,6 +16,7 @@
 
     <div class="login-container">
         <div class="login-box">
+            <h2>Hospital 7</h2>
             <div class="avatar">
                 <img src="{{ asset('images/user-avatar.png') }}" alt="User Avatar">
             </div>
@@ -31,6 +32,7 @@
                     <input type="password" name="password" placeholder="Contraseña" required>
                 </div>
                 <button type="submit">Ingresar</button>
+                <a href="#" class="forgot">No tienes cuenta? Registrate aqui</a>
                 <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
             </form>
         </div>
