@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('habitaciones', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_habitacion');
+            $table->string('numero', 10);
+            $table->char('tipo_habitacion', 1); // I: Individual, D: Doble, S: Suite
+            $table->char('estado_habitacion', 1)->default('D'); // D: Disponible, O: Ocupada, M: Mantenimiento
+            $table->char('estado_auditoria', 1)->default('A');
+            $table->timestamp('fecha_creacion_auditoria')->useCurrent();
             $table->timestamps();
         });
     }

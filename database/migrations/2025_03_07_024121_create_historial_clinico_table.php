@@ -12,8 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('historial_clinico', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_historial');
+            $table->unsignedBigInteger('id_paciente');
+            $table->unsignedBigInteger('id_consulta')->nullable();
+            $table->unsignedBigInteger('id_tratamiento')->nullable();
+            $table->text('notas')->nullable();
+            $table->char('estado_auditoria', 1)->default('A');
+            $table->timestamp('fecha_creacion_auditoria')->useCurrent();
             $table->timestamps();
+            
+            $table->foreign('id_paciente')->references('id_paciente')->on('pacientes');
+            $table->foreign('id_consulta')->references('id_consulta')->on('consultas')->onDelete('set null');
+            $table->foreign('id_tratamiento')->references('id_tratamiento')->on('tratamientos')->onDelete('set null');
         });
     }
 

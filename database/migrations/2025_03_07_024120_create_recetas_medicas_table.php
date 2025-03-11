@@ -11,9 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recetas_medicas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('detalles_receta', function (Blueprint $table) {
+            $table->id('id_detalle_receta');
+            $table->unsignedBigInteger('id_receta');
+            $table->unsignedBigInteger('id_medicamento');
+            $table->integer('cantidad');
+            $table->string('dosis', 100)->nullable();
+            $table->string('frecuencia', 100)->nullable();
+            $table->string('duracion', 50)->nullable();
+            $table->char('estado_auditoria', 1)->default('A');
+            $table->timestamp('fecha_creacion_auditoria')->useCurrent();
             $table->timestamps();
+            
+            $table->foreign('id_receta')->references('id_receta')->on('recetas_medicas');
+            $table->foreign('id_medicamento')->references('id_medicamento')->on('medicamentos');
         });
     }
 
