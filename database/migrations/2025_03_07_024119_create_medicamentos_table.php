@@ -12,7 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('medicamentos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_medicamento');
+            $table->string('nombre', 100);
+            $table->text('descripcion')->nullable();
+            $table->string('presentacion', 50)->nullable();
+            $table->string('dosis_recomendada', 100)->nullable();
+            $table->integer('stock')->default(0);
+            $table->decimal('precio', 10, 2)->nullable();
+            $table->char('estado_auditoria', 1)->default('A');
+            $table->timestamp('fecha_creacion_auditoria')->useCurrent();
             $table->timestamps();
         });
     }

@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consultas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tratamientos', function (Blueprint $table) {
+            $table->id('id_tratamiento');
+            $table->string('nombre', 100);
+            $table->text('descripcion')->nullable();
+            $table->decimal('costo', 10, 2)->nullable();
+            $table->char('estado_auditoria', 1)->default('A');
+            $table->timestamp('fecha_creacion_auditoria')->useCurrent();
             $table->timestamps();
         });
     }
