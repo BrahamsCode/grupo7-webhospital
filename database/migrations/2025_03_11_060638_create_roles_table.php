@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('especialidades', function (Blueprint $table) {
-            $table->id('id_especialidad');
-            $table->string('nombre', 100);
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id('id_rol');
+            $table->string('nombre', 50);
             $table->string('descripcion')->nullable();
             $table->char('estado_auditoria', 1)->default('A');
             $table->timestamp('fecha_creacion_auditoria')->useCurrent();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('especialidades');
+        Schema::dropIfExists('roles');
     }
 };
