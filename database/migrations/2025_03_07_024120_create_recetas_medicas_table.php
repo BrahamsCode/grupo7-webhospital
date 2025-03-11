@@ -20,7 +20,7 @@ return new class extends Migration
             $table->char('estado_auditoria', 1)->default('A');
             $table->timestamp('fecha_creacion_auditoria')->useCurrent();
             $table->timestamps();
-            
+
             $table->foreign('id_consulta')->references('id_consulta')->on('consultas');
         });
     }
