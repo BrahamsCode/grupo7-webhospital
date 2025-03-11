@@ -1,6 +1,9 @@
 # Sistema web desarrollado 
-## Para la administración  completa de las operaciones de un hospital desde el panel de administrador. Esta aplicación permite gestionar pacientes, citas médicas, personal médico e historias clínicas y también desde el portal para el cliente haga su reserva de manera integra y eficiente, 
+## Para la administración  completa de las operaciones de un hospital desde el panel de administrador. Esta aplicación permite gestionar pacientes, citas médicas, personal médico e historias clínicas y también desde el portal para el cliente haga su reserva de manera integra y eficiente.
 
+## Diagrama de la Base de Datos
+
+![Diagrama ER del Sistema Hospital](./public/images/DiagramaDB.png)
 
 ## Tecnologías Utilizadas
 - **Backend:** Laravel 12
