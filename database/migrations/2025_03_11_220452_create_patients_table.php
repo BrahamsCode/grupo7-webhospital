@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained();
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('document_type', 20);
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('gender', 10)->nullable();
             $table->string('phone')->nullable();
             $table->date('birth_date')->nullable();
-            $table->foreignId('insurance_id')->nullable()->constrained();
+            $table->foreignId('insurance_id')->nullable()->constrained()->onDelete('set null');
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
             $table->softDeletes();

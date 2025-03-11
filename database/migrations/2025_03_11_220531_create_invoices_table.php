@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->constrained();
+            $table->foreignId('patient_id')->constrained()->onDelete('restrict');
             $table->date('issue_date');
             $table->date('due_date');
             $table->decimal('total_amount', 10, 2)->default(0);

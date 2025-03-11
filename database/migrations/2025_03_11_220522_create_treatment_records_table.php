@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('treatment_records', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('medical_record_id')->constrained();
-            $table->foreignId('treatment_id')->constrained();
+            $table->foreignId('medical_record_id')->constrained()->onDelete('cascade');
+            $table->foreignId('treatment_id')->constrained()->onDelete('restrict');
             $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->text('notes')->nullable();

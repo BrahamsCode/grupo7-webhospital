@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('admissions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->constrained();
-            $table->foreignId('room_id')->constrained();
+            $table->foreignId('patient_id')->constrained()->onDelete('cascade');
+            $table->foreignId('room_id')->constrained()->onDelete('restrict');
             $table->dateTime('admission_date');
             $table->dateTime('discharge_date')->nullable();
             $table->text('reason')->nullable();
