@@ -23,9 +23,9 @@ return new class extends Migration
             $table->char('estado_auditoria', 1)->default('A');
             $table->timestamp('fecha_creacion_auditoria')->useCurrent();
             $table->timestamps();
-            
+
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('set null');
-            $table->foreign('id_especialidad')->references('id_especialidad')->on('especialidades');
+            $table->foreign('id_especialidad')->references('id_especialidad')->on('especialidades'); // 🔹 Corrección aquí
         });
     }
 
