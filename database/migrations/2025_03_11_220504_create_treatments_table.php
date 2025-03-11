@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('especialidades', function (Blueprint $table) {
-            $table->id('id_especialidad');
-            $table->string('nombre', 100);
-            $table->string('descripcion')->nullable();
-            $table->char('estado_auditoria', 1)->default('A');
-            $table->timestamp('fecha_creacion_auditoria')->useCurrent();
+        Schema::create('treatments', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->decimal('cost', 10, 2)->default(0);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('especialidades');
+        Schema::dropIfExists('treatments');
     }
 };

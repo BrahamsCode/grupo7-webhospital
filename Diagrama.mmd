@@ -1,0 +1,274 @@
+erDiagram
+    USERS ||--o{ DOCTORS : has
+    USERS ||--o{ NURSES : has
+    USERS ||--o{ PATIENTS : has
+    ROLES ||--o{ USERS : assigns
+
+    SPECIALTIES ||--o{ DOCTORS : belongs_to
+    SPECIALTIES ||--o{ NURSES : specializes_in
+
+    DOCTORS ||--o{ DOCTOR_SCHEDULES : sets
+    DOCTORS ||--o{ APPOINTMENTS : attends
+
+    PATIENTS ||--o{ APPOINTMENTS : requests
+    PATIENTS ||--o{ MEDICAL_RECORDS : has
+    PATIENTS ||--o{ ADMISSIONS : registers
+    PATIENTS }|--o{ INSURANCES : affiliated_with
+
+    APPOINTMENTS ||--o{ CONSULTATIONS : generates
+
+    CONSULTATIONS ||--o{ PRESCRIPTIONS : produces
+    CONSULTATIONS ||--o{ MEDICAL_RECORDS : registers
+
+    PRESCRIPTIONS ||--o{ PRESCRIPTION_DETAILS : contains
+    PRESCRIPTION_DETAILS }|--|| MEDICATIONS : prescribes
+
+    TREATMENTS ||--o{ TREATMENT_RECORDS : applies
+    MEDICAL_RECORDS ||--o{ TREATMENT_RECORDS : records
+
+    ROOMS ||--o{ ADMISSIONS : assigns
+
+    PATIENTS ||--o{ INVOICES : generates
+    INVOICES ||--o{ INVOICE_DETAILS : contains
+    INVOICES ||--o{ PAYMENTS : receives
+
+    USERS {
+        id bigint PK
+        name varchar
+        email varchar
+        password varchar
+        role_id bigint FK
+        last_access timestamp
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    ROLES {
+        id bigint PK
+        name varchar
+        description varchar
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    SPECIALTIES {
+        id bigint PK
+        name varchar
+        description varchar
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    DOCTORS {
+        id bigint PK
+        user_id bigint FK
+        first_name varchar
+        last_name varchar
+        specialty_id bigint FK
+        phone varchar
+        email varchar
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    NURSES {
+        id bigint PK
+        user_id bigint FK
+        first_name varchar
+        last_name varchar
+        phone varchar
+        email varchar
+        specialty_id bigint FK
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    INSURANCES {
+        id bigint PK
+        name varchar
+        plan_type varchar
+        coverage_percentage decimal
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    PATIENTS {
+        id bigint PK
+        user_id bigint FK
+        first_name varchar
+        last_name varchar
+        document_type varchar
+        document_number varchar
+        email varchar
+        address varchar
+        gender varchar
+        phone varchar
+        birth_date date
+        insurance_id bigint FK
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    DOCTOR_SCHEDULES {
+        id bigint PK
+        doctor_id bigint FK
+        weekday tinyint
+        start_time time
+        end_time time
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    APPOINTMENTS {
+        id bigint PK
+        patient_id bigint FK
+        doctor_id bigint FK
+        appointment_date datetime
+        status tinyint
+        notes text
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    TREATMENTS {
+        id bigint PK
+        name varchar
+        description text
+        cost decimal
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    MEDICATIONS {
+        id bigint PK
+        name varchar
+        description text
+        presentation varchar
+        recommended_dose varchar
+        stock int
+        price decimal
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    CONSULTATIONS {
+        id bigint PK
+        appointment_id bigint FK
+        diagnosis text
+        treatment text
+        observations text
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    PRESCRIPTIONS {
+        id bigint PK
+        consultation_id bigint FK
+        issue_date date
+        status tinyint
+        instructions text
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    PRESCRIPTION_DETAILS {
+        id bigint PK
+        prescription_id bigint FK
+        medication_id bigint FK
+        quantity int
+        dose varchar
+        frequency varchar
+        duration varchar
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    MEDICAL_RECORDS {
+        id bigint PK
+        patient_id bigint FK
+        consultation_id bigint FK
+        record_date datetime
+        notes text
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    TREATMENT_RECORDS {
+        id bigint PK
+        medical_record_id bigint FK
+        treatment_id bigint FK
+        start_date date
+        end_date date
+        notes text
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    ROOMS {
+        id bigint PK
+        room_number varchar
+        type varchar
+        capacity int
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    ADMISSIONS {
+        id bigint PK
+        patient_id bigint FK
+        room_id bigint FK
+        admission_date datetime
+        discharge_date datetime
+        reason text
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    INVOICES {
+        id bigint PK
+        patient_id bigint FK
+        issue_date date
+        due_date date
+        total_amount decimal
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    INVOICE_DETAILS {
+        id bigint PK
+        invoice_id bigint FK
+        description varchar
+        quantity int
+        unit_price decimal
+        total decimal
+        created_at timestamp
+        updated_at timestamp
+    }
+
+    PAYMENTS {
+        id bigint PK
+        invoice_id bigint FK
+        payment_date datetime
+        amount decimal
+        payment_method varchar
+        reference_number varchar
+        status tinyint
+        created_at timestamp
+        updated_at timestamp
+    }

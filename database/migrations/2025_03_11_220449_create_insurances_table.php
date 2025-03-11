@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->id('id_rol');
-            $table->string('nombre', 50);
-            $table->string('descripcion')->nullable();
-            $table->char('estado_auditoria', 1)->default('A');
-            $table->timestamp('fecha_creacion_auditoria')->useCurrent();
+        Schema::create('insurances', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('plan_type')->nullable();
+            $table->decimal('coverage_percentage', 5, 2)->default(0);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('insurances');
     }
 };
