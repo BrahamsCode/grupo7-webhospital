@@ -9,5 +9,4 @@ Route::get('/', function () {
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 
-// Ruta para procesar el login
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
