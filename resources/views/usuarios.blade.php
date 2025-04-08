@@ -4,6 +4,21 @@
 
 <h1 class="text-center text-gray-800 text-3xl font-bold mb-6">Lista de Usuarios</h1>
 
+<form method="GET" action="{{ route('usuarios.index') }}" class="mb-6">
+    <div class="flex justify-center items-center space-x-4">
+        <div>
+            <label for="rol" class="text-gray-700">Filtrar por Rol:</label>
+            <select name="rol" id="rol" class="px-4 py-2 border rounded-md">
+                <option value="">Todos</option>
+                <option value="2" {{ request()->get('rol') == '2' ? 'selected' : '' }}>Pacientes</option>
+                <option value="3" {{ request()->get('rol') == '3' ? 'selected' : '' }}>Doctores(as)</option>
+                <option value="4" {{ request()->get('rol') == '4' ? 'selected' : '' }}>Enfermeros(as)</option>
+            </select>
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md cursor-pointer">Filtrar</button>
+    </div>
+</form>
+
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
 
     @foreach($usuarios as $usuario)
