@@ -32,9 +32,9 @@ class Usuario extends Model
         return $this->belongsTo(Especialidad::class, 'id_especialidad');
     }
 
-    /*public function rol(){
+    public function rol(){
         return $this->belongsTo(Rol::class,'id_rol');
-    }*/
+    }
 
     public $timestamps = false;
 }
