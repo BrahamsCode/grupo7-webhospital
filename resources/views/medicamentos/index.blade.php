@@ -4,11 +4,11 @@
 <h1 class="text-center text-3xl font-bold text-cyan-800">Elige un Medicamento para comprar</h1><br>
 
 <div class="relative">
-    
+
     <button id="scrollLeft" class="absolute left-0 top-1/2 -translate-y-1/2 bg-cyan-600 text-white p-2 rounded-full shadow-lg z-10 hover:bg-cyan-700">
         ‹
     </button>
-    
+
     <div id="medicamentoSlider" class="flex overflow-x-auto space-x-4 px-10 scroll-smooth">
         @foreach($medicamentos as $medicamento)
             <div class="min-w-[280px] bg-white shadow-md hover:shadow-lg transition duration-300 rounded-lg border border-gray-200 p-4">
@@ -23,7 +23,7 @@
             </div>
         @endforeach
     </div>
-    
+
     <button id="scrollRight" class="absolute right-0 top-1/2 -translate-y-1/2 bg-cyan-600 text-white p-2 rounded-full shadow-lg z-10 hover:bg-cyan-700">
         ›
     </button>

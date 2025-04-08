@@ -33,8 +33,6 @@
                 <a href="{{ route('usuarios.index') }}" class="btn-ingresar">
                     Ingresar
                 </a>
-                <a href="#" class="forgot">No tienes cuenta? Registrate aqui</a>
-                <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
             </form>
         </div>
     </div>

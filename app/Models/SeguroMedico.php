@@ -14,6 +14,7 @@ class SeguroMedico extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'id_seguro_medico',
         'nombre',
         'tipo_plan',
         'porcentaje_cobertura',

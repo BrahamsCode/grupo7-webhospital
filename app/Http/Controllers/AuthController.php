@@ -12,7 +12,6 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    // Procesa el login
     public function login(Request $request)
     {
         $credentials = $request->only('usuario', 'password');
@@ -22,5 +21,14 @@ class AuthController extends Controller
         }
 
         return back()->withErrors(['usuario' => 'Credenciales incorrectas']);
+    }
+
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
     }
 }

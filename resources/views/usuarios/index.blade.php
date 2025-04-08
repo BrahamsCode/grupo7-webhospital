@@ -40,7 +40,7 @@
 
             <div class="mt-4 flex justify-around">
                 <a href="#" class="text-blue-600 hover:text-blue-900">Editar</a>
-                <form action="#" class="inline-block">                    
+                <form action="#" class="inline-block">
                     <button type="submit" class="text-red-600 hover:text-red-900">Eliminar</button>
                 </form>
             </div>
