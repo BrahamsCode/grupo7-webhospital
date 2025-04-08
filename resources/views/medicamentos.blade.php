@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="text-center text-gray-800 text-2xl font-semibold mb-6">Elige un Medicamento para comprar</h1>
+<h1 class="text-center text-3xl font-bold text-cyan-800">Elige un Medicamento para comprar</h1><br>
 
 <div class="relative">
     

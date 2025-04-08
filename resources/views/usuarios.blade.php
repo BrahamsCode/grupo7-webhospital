@@ -102,7 +102,7 @@
                     @endif
                 </td>
                 <td class="px-6 py-4">
-                    {{ $usuario->id_especialidad }}
+                    {{ $usuario->especialidad->nombre ?? 'Sin especialidad' }}
                 </td>
                 <td class="px-6 py-4">
                     {{ $usuario->ultimo_acceso }}

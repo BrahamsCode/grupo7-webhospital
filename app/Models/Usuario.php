@@ -24,10 +24,13 @@ class Usuario extends Model
         'id_rol',
         'id_especialidad',
         'ultimo_acceso',
-        'estado_auditoria',
-        
-
+        'estado_auditoria',        
     ];
+
+    public function especialidad()
+    {
+        return $this->belongsTo(Especialidad::class, 'id_especialidad');
+    }
 
     /*public function rol(){
         return $this->belongsTo(Rol::class,'id_rol');

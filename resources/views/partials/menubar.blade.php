@@ -8,12 +8,12 @@
     <a href="{{ route('usuarios.index') }}" class="hover:bg-cyan-300 px-3 py-1 rounded-md cursor-pointer transition duration-200">
       Usuarios
     </a>
-    <div class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
+    <a href="{{ route('doctores.index') }}" class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
       Doctores
-    </div>
-    <div class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
-      Pacientes
-    </div>
+    </a>
+    <a href="{{ route('seguros.index') }}" class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
+      Seguros Medicos
+    </a>
     <a href="{{ route('especialidades.index') }}" class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
       Especialidades
     </a>
