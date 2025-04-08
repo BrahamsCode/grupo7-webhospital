@@ -14,7 +14,7 @@
     <div class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
       Pacientes
     </div>
-    <a href="#" class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
+    <a href="{{ route('especialidades.index') }}" class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
       Especialidades
     </a>
     <a href="{{ route('medicamentos.index') }}" class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
