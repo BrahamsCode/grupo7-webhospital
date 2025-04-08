@@ -5,18 +5,21 @@
   </div>
   
   <div class="flex gap-6">
-    <div class="hover:bg-cyan-300 px-3 py-1 rounded-md cursor-pointer transition duration-200">
+    <a href="{{ route('usuarios.index') }}" class="hover:bg-cyan-300 px-3 py-1 rounded-md cursor-pointer transition duration-200">
       Usuarios
-    </div>
+    </a>
     <div class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
       Doctores
     </div>
     <div class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
       Pacientes
     </div>
-    <div class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
+    <a href="#" class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
       Especialidades
-    </div>
+    </a>
+    <a href="{{ route('medicamentos.index') }}" class="hover:bg-cyan-300 px-3 py-1 rounded-md transition duration-200 cursor-pointer">
+      Medicamentos
+    </a>
   </div>
 
   <button onclick="goToCarritoCompras()" class="flex items-center gap-2 bg-teal-500 text-white px-4 py-1.5 rounded-md hover:bg-teal-600 transition duration-200 shadow">
