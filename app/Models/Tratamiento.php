@@ -5,23 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rol extends Model
+class Tratamiento extends Model
 {
     use HasFactory;
 
-    protected $table = 'roles';
-    protected $primaryKey = 'id_rol';
+    protected $table = 'tratamientos';
+    protected $primaryKey = 'id_tratamiento';
     public $timestamps = false;
 
     protected $fillable = [
         'nombre',
         'descripcion',
+        'costo',
         'estado_auditoria',
         'fecha_creacion_auditoria'
     ];
 
-    public function usuarios()
+    public function historialClinico()
     {
-        return $this->hasMany(Usuario::class, 'id_rol', 'id_rol');
+        return $this->hasMany(HistorialClinico::class, 'id_tratamiento', 'id_tratamiento');
     }
 }
