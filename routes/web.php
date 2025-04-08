@@ -15,4 +15,7 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 
 Route::get('/usuarios', [UsuarioController::class,'index'])->name('usuarios.index');
+
 Route::get('/medicamentos', [MedicamentoController::class,'index'])->name('medicamentos.index');
+
+Route::get('/especialidades', [EspecialidadController::class,'index'])->name('especialidades.index');
