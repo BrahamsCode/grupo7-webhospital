@@ -17,6 +17,7 @@ use App\Http\Controllers\IngresoController;
 use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TiendaController;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Auth\LoginController;
@@ -57,6 +58,16 @@ Route::get('/especialidades', [EspecialidadController::class,'index'])->name('es
 Route::get('/doctores', [UsuarioController::class, 'doctores'])->name('doctores.index');
 
 Route::get('/seguros', [SeguroMedicoController::class, 'index'])->name('seguros.index');
+
+
+// Rutas para la tienda y carrito
+Route::get('/tienda', [TiendaController::class, 'index'])->name('tienda.index');
+Route::get('/carrito', [TiendaController::class, 'verCarrito'])->name('tienda.carrito');
+Route::post('/carrito/agregar', [TiendaController::class, 'agregarAlCarrito'])->name('tienda.agregar');
+Route::delete('/carrito/eliminar', [TiendaController::class, 'eliminarDelCarrito'])->name('tienda.eliminar');
+Route::put('/carrito/actualizar', [TiendaController::class, 'actualizarCarrito'])->name('tienda.actualizar');
+Route::post('/carrito/finalizar', [TiendaController::class, 'finalizarCompra'])->name('tienda.finalizar');
+Route::post('/carrito/vaciar', [TiendaController::class, 'vaciarCarrito'])->name('tienda.vaciar');
 
 // Rutas de autenticación para usuarios no autenticados
 // Route::middleware('guest')->group(function () {

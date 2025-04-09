@@ -16,59 +16,15 @@
 
     <main>
         <div class="max-w-[1080px] pt-5 m-auto">
-        @yield('content')
-</div>
+            @yield('content')
+        </div>
     </main>
-    
+
+    <script>
+        function goToCarritoCompras() {
+            window.location.href = "{{ route('tienda.carrito') }}";
+        }
+    </script>
+
 </body>
-<!--<script>
-
-    const KEY_CACHE_SESSION = 'KEY_CACHE_SESSION';
-    const CSRF_TOKEN = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-    function generateRandomString(){
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz';
-        let random = '';
-        for (let i = 0; i < 20; i++){
-                const ch = chars[Math.floor(Math.random() * (chars.length - 1))];
-                random+=ch;
-        }
-        return random;
-    }
-
-    function loadCacheSession(){
-        const prevSession = localStorage.getItem(KEY_CACHE_SESSION);
-        console.log('prevSession',prevSession);
-        if(!prevSession){
-            const random = generateRandomString();
-            console.log('random',random);
-            localStorage.setItem(KEY_CACHE_SESSION, random);
-        }
-    }
-
-    async function addCarritoCompras(idProducto) {
-        console.log('idProducto',idProducto);
-
-        const sessionId=localStorage.getItem(KEY_CACHE_SESSION);
-
-        const result = await fetch('/carrito-compras/nuevo-producto', {
-            method: 'POST',
-            body: JSON.stringify({ idProducto, sessionId }),
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': CSRF_TOKEN
-            }
-        });
-        const data = await result.json();
-        console.log('data',data);
-    }
-
-    loadCacheSession();
-
-    function goToCarritoCompras(){
-        console.log('goToCarritoCompras');
-        window.location.href = `/carrito-compras/${localStorage.getItem(KEY_CACHE_SESSION)}`
-    }
-
-</script>-->
 </html>
