@@ -116,8 +116,7 @@ Accede a la aplicación en: http://localhost:8000
 4. Registrar consultas y actualizar historias clínicas
 
 ## Seguridad
-- Autenticación basada en roles (administrador, recepcionista, médico)
-- Protección CSRF en todos los formularios
+- Autenticación basada en roles (administrador, doctor, enfermero,paciente)
 - Encriptación de datos sensibles
 - Validación de entradas en el cliente y servidor
 
