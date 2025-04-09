@@ -7,8 +7,8 @@
 
 ## Tecnologías Utilizadas
 - **Backend:** Laravel 12
-- **Frontend:** Bootstrap 5
-- **Base de Datos:** MySQL/PostgreSQL
+- **Frontend:** Bootstrap 5 /Tailwind
+- **Base de Datos:** MySQL
 - **Dependencias:** Composer, NPM
 
 ## Requisitos del Sistema
